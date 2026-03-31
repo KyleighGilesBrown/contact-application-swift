@@ -36,7 +36,7 @@
                                 <rect key="frame" x="105" y="385" width="182" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Date Picker"/>
+                                <buttonConfiguration key="configuration" style="plain" title="testing (date)"/>
                                 <connections>
                                     <segue destination="pnb-c5-8BQ" kind="show" id="cyh-LY-hhQ"/>
                                 </connections>
