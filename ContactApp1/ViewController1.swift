@@ -25,5 +25,11 @@ class ViewController1: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    
+    @IBOutlet weak var sgmtEditMode: UISegmentedControl!
+    
+    @IBAction func changeEditMode(_ sender: Any) {
+    }
+    
 }

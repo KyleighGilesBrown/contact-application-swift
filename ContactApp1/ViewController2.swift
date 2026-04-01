@@ -26,4 +26,18 @@ class ViewController2: UIViewController {
     }
     */
 
+ /*   class ViewController: UIViewController, UITextFieldDelegate {
+
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            textField.delegate = self
+        }
+
+        func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
+    }*/
+    
+    
 }
