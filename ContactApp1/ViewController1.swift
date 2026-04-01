@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController1: UIViewController {
+class ViewController1: UIViewController, UITextFieldDelegate {
 
     
     
@@ -65,7 +65,10 @@ class ViewController1: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let textFields: [UITextField] = [txtName, txtAddress, txtCity, txtState, txtZip, txtPhone, txtCell, txtEmail]
+                for textField in textFields {
+                    textField.delegate = self
+                }
         // Do any additional setup after loading the view.
         self.changeEditMode(self)
     }
@@ -73,6 +76,12 @@ class ViewController1: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            textField.resignFirstResponder()
+            return true
+        }
+
     
     
     
