@@ -31,6 +31,7 @@ class ViewController1: UIViewController, UITextFieldDelegate {
             for textField in textFields {
                 textField.isEnabled = false
                 textField.borderStyle = UITextField.BorderStyle.none
+                textField.backgroundColor = .systemGray6
             }
             btnChange.isHidden = true
         }
@@ -38,6 +39,8 @@ class ViewController1: UIViewController, UITextFieldDelegate {
             for textField in textFields {
                 textField.isEnabled = true
                 textField.borderStyle = UITextField.BorderStyle.roundedRect
+                textField.backgroundColor = .systemBackground
+
             }
             btnChange.isHidden = false
         }

@@ -28,22 +28,63 @@
         <scene sceneID="9gU-eN-Nm8">
             <objects>
                 <viewController title="Settings" id="cKH-L3-Dfr" customClass="ViewController2" customModule="ContactApp1" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="2yl-r8-uqq">
+                    <view key="view" contentMode="scaleToFill" id="LJv-7G-pu5">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0go-ir-hp7">
-                                <rect key="frame" x="175" y="390" width="63" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="uzi-HE-YFK">
+                                <rect key="frame" x="166" y="477" width="61" height="28"/>
+                                <subviews>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sIq-uI-9Wy">
+                                        <rect key="frame" x="0.0" y="0.0" width="63" height="28"/>
+                                        <connections>
+                                            <action selector="sortDirectionChanged:" destination="cKH-L3-Dfr" eventType="valueChanged" id="gfd-dg-W6I"/>
+                                        </connections>
+                                    </switch>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="c4t-ps-KaI"/>
+                                    <constraint firstAttribute="width" constant="61" id="fr0-dg-McI"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rqx-ce-zNE">
+                                <rect key="frame" x="36" y="197" width="321" height="256.66666666666674"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31L-Ft-4cZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="321" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gE0-e6-b2o">
+                                        <rect key="frame" x="0.0" y="20.333333333333343" width="321" height="216"/>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ascending Sort" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9qh-wT-54S">
+                                        <rect key="frame" x="0.0" y="236.33333333333331" width="321" height="20.333333333333314"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Ui-Fe-sfH"/>
+                        <viewLayoutGuide key="safeArea" id="yiz-QX-WIq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="uzi-HE-YFK" firstAttribute="centerY" secondItem="LJv-7G-pu5" secondAttribute="centerY" id="5In-23-nPH"/>
+                            <constraint firstItem="rqx-ce-zNE" firstAttribute="centerX" secondItem="LJv-7G-pu5" secondAttribute="centerX" id="AbA-yM-f0t"/>
+                            <constraint firstItem="rqx-ce-zNE" firstAttribute="leading" secondItem="yiz-QX-WIq" secondAttribute="leading" constant="36" id="ERy-v9-qBD"/>
+                            <constraint firstItem="rqx-ce-zNE" firstAttribute="top" secondItem="yiz-QX-WIq" secondAttribute="top" constant="25.000000000000028" id="Viq-3c-QPN"/>
+                            <constraint firstItem="uzi-HE-YFK" firstAttribute="centerY" secondItem="LJv-7G-pu5" secondAttribute="centerY" id="ZhL-mG-dsW"/>
+                            <constraint firstItem="uzi-HE-YFK" firstAttribute="centerX" secondItem="LJv-7G-pu5" secondAttribute="centerX" id="dp3-iF-Ch9"/>
+                            <constraint firstItem="uzi-HE-YFK" firstAttribute="centerX" secondItem="LJv-7G-pu5" secondAttribute="centerX" id="nOs-2V-n7u"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hJI-CY-HO9"/>
+                    <connections>
+                        <outlet property="pckSortField" destination="gE0-e6-b2o" id="lpJ-eZ-JYU"/>
+                        <outlet property="swAscending" destination="sIq-uI-9Wy" id="BY2-vD-fyY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nE7-1n-oFW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
