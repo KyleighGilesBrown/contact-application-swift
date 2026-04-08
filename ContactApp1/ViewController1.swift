@@ -6,11 +6,12 @@
 //
 
 import UIKit
-
+import CoreData
 class ViewController1: UIViewController, UITextFieldDelegate {
 
     
-    
+    var currentContact: Contact?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     /*
     // MARK: - Navigation
@@ -68,12 +69,32 @@ class ViewController1: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        changeEditMode(self)
         let textFields: [UITextField] = [txtName, txtAddress, txtCity, txtState, txtZip, txtPhone, txtCell, txtEmail]
                 for textField in textFields {
-                    textField.delegate = self
+                    textField.addTarget(self, action: #selector(UITextFieldDelegate.textFieldShouldEndEditing(_:)), for: UIControl.Event.editingDidEnd)
                 }
         // Do any additional setup after loading the view.
         self.changeEditMode(self)
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        if currentContact == nil {
+            let context = appDelegate.persistentContainer.viewContext
+            currentContact = Contact(context: context)
+        
+        }
+        currentContact?.contactName = txtName.text
+        currentContact?.streetAddress = txtAddress.text
+        currentContact?.city = txtCity.text
+        currentContact?.state = txtState.text
+        currentContact?.zipCode = txtZip.text
+        currentContact?.cellNumber = txtCell.text
+        currentContact?.phoneNumber = txtPhone.text
+        currentContact?.email = txtEmail.text
+        return true
+
+
     }
     
     override func didReceiveMemoryWarning() {
