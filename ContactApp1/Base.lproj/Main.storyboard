@@ -8,6 +8,57 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Contacts Table View Controller-->
+        <scene sceneID="N46-rl-Lb1">
+            <objects>
+                <tableViewController id="HQF-7B-Vlw" customClass="ContactsTableViewController" customModule="ContactApp1" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="XkR-ws-c3Y">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactsCell" textLabel="mO5-7B-GAu" detailTextLabel="l9q-bG-xFq" style="IBUITableViewCellStyleSubtitle" id="RjX-RM-Opg">
+                                <rect key="frame" x="0.0" y="50" width="393" height="51"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RjX-RM-Opg" id="VDO-qS-gOu">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="51"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mO5-7B-GAu">
+                                            <rect key="frame" x="20" y="8" width="25" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="l9q-bG-xFq">
+                                            <rect key="frame" x="19.999999999999996" y="24.333333333333336" width="52.666666666666664" height="18"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="KxG-xE-qt1" kind="show" identifier="addContact" id="xem-Mg-i3Z"/>
+                                    <segue destination="KxG-xE-qt1" kind="show" identifier="EditContact" trigger="accessoryAction" id="BYd-ms-VvG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HQF-7B-Vlw" id="SLQ-UW-OIo"/>
+                            <outlet property="delegate" destination="HQF-7B-Vlw" id="UXt-yI-iVA"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="gwi-nb-ePd">
+                        <barButtonItem key="rightBarButtonItem" title="+" id="mAw-5t-eac"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7L5-y8-CIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1659" y="-863"/>
+        </scene>
         <!--Map-->
         <scene sceneID="xfx-Kc-uzS">
             <objects>
@@ -18,7 +69,7 @@
                         <viewLayoutGuide key="safeArea" id="RXE-zK-e5E"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="jvv-iz-6Bn"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="jvv-iz-6Bn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQf-np-iCf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -48,7 +99,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="rqx-ce-zNE">
-                                <rect key="frame" x="36" y="197" width="321" height="256.66666666666674"/>
+                                <rect key="frame" x="36" y="197.00000000000003" width="321" height="256.66666666666674"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Order" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31L-Ft-4cZ">
                                         <rect key="frame" x="0.0" y="0.0" width="321" height="20.333333333333332"/>
@@ -236,7 +287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xB4-Zg-ktp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1089.3129770992366" y="-209.1549295774648"/>
+            <point key="canvasLocation" x="187" y="-750"/>
         </scene>
         <!--Date Picker-->
         <scene sceneID="QGc-BF-zKS">
@@ -246,8 +297,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-7x-Ncy" customClass="Date">
-                                <rect key="frame" x="37" y="409" width="320" height="34.333333333333314"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-7x-Ncy" customClass="Date">
+                                <rect key="frame" x="37" y="409" width="319" height="34"/>
                                 <date key="date" timeIntervalSinceReferenceDate="-978207726.21204376">
                                     <!--1970-01-02 03:37:53 +0000-->
                                 </date>
@@ -259,7 +310,9 @@
                         <viewLayoutGuide key="safeArea" id="QCj-EL-CIE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xXg-7x-Ncy" firstAttribute="top" secondItem="QCj-EL-CIE" secondAttribute="top" constant="237" id="6Hm-TC-vVp"/>
                             <constraint firstItem="xXg-7x-Ncy" firstAttribute="centerY" secondItem="vQb-bo-Iya" secondAttribute="centerY" id="ARr-sz-v7i"/>
+                            <constraint firstItem="xXg-7x-Ncy" firstAttribute="leading" secondItem="QCj-EL-CIE" secondAttribute="leading" constant="37" id="gXP-P4-g0R"/>
                             <constraint firstItem="xXg-7x-Ncy" firstAttribute="centerX" secondItem="vQb-bo-Iya" secondAttribute="centerX" id="jcJ-mb-VKz"/>
                         </constraints>
                     </view>
@@ -291,11 +344,11 @@
             </objects>
             <point key="canvasLocation" x="-1668" y="93"/>
         </scene>
-        <!--Item 1-->
+        <!--Contacts-->
         <scene sceneID="5ed-zC-49p">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KMR-QX-9yf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Ihl-J1-kJ8"/>
+                    <tabBarItem key="tabBarItem" title="Contacts" image="person.crop.circle" catalog="system" id="Ihl-J1-kJ8"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="BLz-hw-GQW">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -303,18 +356,18 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="KxG-xE-qt1" kind="relationship" relationship="rootViewController" id="wCA-k9-fWW"/>
+                        <segue destination="HQF-7B-Vlw" kind="relationship" relationship="rootViewController" id="y4t-qi-mfu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HIl-EV-Dnn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-764.12213740458014" y="-209.1549295774648"/>
         </scene>
-        <!--Item 2-->
+        <!--Settings-->
         <scene sceneID="mSp-o5-1e7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="OuM-Ra-zKm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="vN5-zv-LZR"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gearshape" catalog="system" id="vN5-zv-LZR"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="21L-EQ-hML">
                         <rect key="frame" x="0.0" y="118" width="393" height="54"/>
@@ -330,7 +383,13 @@
             <point key="canvasLocation" x="162.59541984732823" y="396.47887323943667"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="xem-Mg-i3Z"/>
+    </inferredMetricsTieBreakers>
     <resources>
+        <image name="gearshape" catalog="system" width="128" height="123"/>
+        <image name="map" catalog="system" width="128" height="112"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

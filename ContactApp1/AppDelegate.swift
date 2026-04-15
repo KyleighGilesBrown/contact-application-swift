@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         let settings = UserDefaults.standard
-        if settings.string(forKey: "sortField") == nil { settings.set("City", forKey: "sortField")
+        if settings.string(forKey: "sortField") == nil { settings.set("city", forKey: "sortField")
         }
             if settings.string(forKey: "sortDirectionAscending") == nil {
             settings.set(true, forKey: "sortDirectionAscending")
