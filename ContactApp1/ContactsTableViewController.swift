@@ -68,14 +68,7 @@ class ContactsTableViewController: UITableViewController {
     }
     
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath)
-        let contact = contacts[indexPath.row] as? Contact
-        cell.textLabel?.text = contact?.contactName
-        cell.detailTextLabel?.text = contact?.city
-        cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
-        return cell
-    }
+    
     
     
     
@@ -114,7 +107,7 @@ class ContactsTableViewController: UITableViewController {
     
     
     
-    
+ 
     /*
      // Override to support rearranging the table view.
      override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -134,6 +127,17 @@ class ContactsTableViewController: UITableViewController {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ContactsCell", for: indexPath)
+        let contact = contacts[indexPath.row] as? Contact
+        cell.textLabel?.text = contact?.contactName
+        cell.detailTextLabel?.text = "\(contact?.city ?? ""), \(contact?.state ?? "")"
+        cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
+        //performSegue(withIdentifier: "EditContact", sender: tableView.cellForRow(at: indexPath))
+        return cell
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditContact" {
             let contactController = segue.destination as? ViewController1
@@ -141,9 +145,11 @@ class ContactsTableViewController: UITableViewController {
             let selectedContact = contacts[selectedRow!] as? Contact
             contactController?.currentContact = selectedContact!
         }
+        //else if segue.identifier == "addContact" {
+                
+          //  }
         
-        else if segue.identifier == "addContact" {
-        }
+        
         /*
          override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          let selectedContact = contacts[indexPath.row] as? Contact
