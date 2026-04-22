@@ -41,10 +41,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="KxG-xE-qt1" kind="show" identifier="addContact" id="xem-Mg-i3Z"/>
-                                    <segue destination="KxG-xE-qt1" kind="show" identifier="EditContact" trigger="accessoryAction" id="BYd-ms-VvG"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -55,6 +51,10 @@
                     <navigationItem key="navigationItem" id="gwi-nb-ePd">
                         <barButtonItem key="rightBarButtonItem" title="+" id="mAw-5t-eac"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="KxG-xE-qt1" kind="show" identifier="EditContact" id="j7i-p9-36L"/>
+                        <segue destination="KxG-xE-qt1" kind="show" identifier="addContact" id="NXA-RU-KAP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7L5-y8-CIM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -321,10 +321,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-7x-Ncy" customClass="Date">
-                                <rect key="frame" x="37" y="409" width="319" height="34"/>
-                                <date key="date" timeIntervalSinceReferenceDate="-978207726.21204376">
-                                    <!--1970-01-02 03:37:53 +0000-->
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="inline" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-7x-Ncy" customClass="Date">
+                                <rect key="frame" x="36.666666666666657" y="264" width="320" height="324"/>
+                                <date key="date" timeIntervalSinceReferenceDate="-31604399.212043762">
+                                    <!--2000-01-01 05:00:00 +0000-->
                                 </date>
                                 <date key="minimumDate" timeIntervalSinceReferenceDate="-3187256400">
                                     <!--1900-01-01 11:00:00 +0000-->
@@ -334,10 +334,8 @@
                         <viewLayoutGuide key="safeArea" id="QCj-EL-CIE"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="xXg-7x-Ncy" firstAttribute="top" secondItem="QCj-EL-CIE" secondAttribute="top" constant="237" id="6Hm-TC-vVp"/>
-                            <constraint firstItem="xXg-7x-Ncy" firstAttribute="centerY" secondItem="vQb-bo-Iya" secondAttribute="centerY" id="ARr-sz-v7i"/>
-                            <constraint firstItem="xXg-7x-Ncy" firstAttribute="leading" secondItem="QCj-EL-CIE" secondAttribute="leading" constant="37" id="gXP-P4-g0R"/>
-                            <constraint firstItem="xXg-7x-Ncy" firstAttribute="centerX" secondItem="vQb-bo-Iya" secondAttribute="centerX" id="jcJ-mb-VKz"/>
+                            <constraint firstItem="xXg-7x-Ncy" firstAttribute="centerX" secondItem="vQb-bo-Iya" secondAttribute="centerX" id="Qjp-wX-YWZ"/>
+                            <constraint firstItem="xXg-7x-Ncy" firstAttribute="centerY" secondItem="vQb-bo-Iya" secondAttribute="centerY" id="eRw-0k-FV2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="QBr-Sk-L76"/>
@@ -408,7 +406,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="BYd-ms-VvG"/>
+        <segue reference="NXA-RU-KAP"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gearshape" catalog="system" width="128" height="123"/>

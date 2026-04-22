@@ -107,7 +107,7 @@ class ContactsTableViewController: UITableViewController {
     
     
     
- 
+    
     /*
      // Override to support rearranging the table view.
      override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -134,9 +134,12 @@ class ContactsTableViewController: UITableViewController {
         let contact = contacts[indexPath.row] as? Contact
         cell.textLabel?.text = contact?.contactName
         cell.detailTextLabel?.text = "\(contact?.city ?? ""), \(contact?.state ?? "")"
-        cell.accessoryType = UITableViewCell.AccessoryType.detailDisclosureButton
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         //performSegue(withIdentifier: "EditContact", sender: tableView.cellForRow(at: indexPath))
         return cell
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "EditContact", sender: tableView.cellForRow(at: indexPath))
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "EditContact" {
@@ -146,8 +149,8 @@ class ContactsTableViewController: UITableViewController {
             contactController?.currentContact = selectedContact!
         }
         //else if segue.identifier == "addContact" {
-                
-          //  }
+        
+        //  }
         
         
         /*
@@ -158,4 +161,6 @@ class ContactsTableViewController: UITableViewController {
          }
          let alertController = UIAlertController(title: "Contact Selected"?, message: "Selected Row", preferredStyle: <#T##UIAlertController.Style#>)
          } */
-    }}
+        
+    }
+}

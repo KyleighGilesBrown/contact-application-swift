@@ -96,7 +96,9 @@ class ViewController1: UIViewController, UITextFieldDelegate, DateContollerDeleg
         // Do any additional setup after loading the view.
         self.changeEditMode(self)
     }
-    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
         if currentContact == nil {
             let context = appDelegate.persistentContainer.viewContext

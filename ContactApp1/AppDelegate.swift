@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Override point for customization after application launch.
         let settings = UserDefaults.standard
+        // Temporarily add this to force-reset the sort field
         if settings.string(forKey: "sortField") == nil { settings.set("city", forKey: "sortField")
         }
             if settings.string(forKey: "sortDirectionAscending") == nil {
@@ -27,7 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Sort field: \(settings.string(forKey: "sortField")!)")
             print("Sort direction: \(settings.bool(forKey: "sortDirectionAscending"))")
         return true
+        
     }
+    
 
     // MARK: UISceneSession Lifecycle
 
@@ -64,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             })
             return container
         }()
-
+    // Temporarily add this to force-reset the sort field
         // MARK: - Core Data Saving support
 
         func saveContext () {
