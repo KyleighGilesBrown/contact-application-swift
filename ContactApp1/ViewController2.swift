@@ -15,6 +15,8 @@ class ViewController2: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     @IBOutlet weak var swAscending: UISwitch!
     
     let sortOrderItems: Array<String> = ["contactName", "city", "birthday"]
+    let sortOrderDisplayItems: Array<String> = ["Contact Name", "City", "Birthday"]
+
     
     
     override func viewDidLoad() {
@@ -43,7 +45,7 @@ class ViewController2: UIViewController, UIPickerViewDataSource, UIPickerViewDel
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return sortOrderItems[row]
+        return sortOrderDisplayItems[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
